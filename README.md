@@ -7,7 +7,8 @@
 ## Class Clientes:
 
 ``` sh
-A class Cliente é composta por criar, editar e remover cadastros que estarão armazenados em um arquivo json 
+A class Cliente é composta por criar, editar e remover cadastros que estarão armazenados em um arquivo 
+json 
 chamando Cliente.json.
 ```
 
