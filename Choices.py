@@ -26,7 +26,6 @@ class Choices():
         self.choice = choice
 
     def choice_cliente(self):
-        arquivo_cliente = 'Clientes.json'
         contagem_clientes = 1
         print()
         cliente = Clientes(0,0,0,0,0)

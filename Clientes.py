@@ -5,7 +5,11 @@ import os
 
 arquivo_cliente = 'Clientes.json'
 contagem_clientes = 1
-
+if os.path.exists('Clientes.json'):
+    with open('Clientes.json', 'r', encoding='utf-8') as arq:
+        lista_cliente = json.load(arq)
+else:
+    lista_cliente = []
 
 class Clientes():
     def __init__(self, id, pet, tutor, tipo_animal, contato ):
@@ -16,7 +20,6 @@ class Clientes():
         self.contato = contato
 
     def salvar_cadastro(self):
-        lista_cliente = []
         Cadastro = {}
         Cadastro['ID'] = self.id
         Cadastro['Pet'] = self.pet
