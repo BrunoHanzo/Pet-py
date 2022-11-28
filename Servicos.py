@@ -5,8 +5,18 @@ import os
 
 arquivo_servico = 'Servicos.json'
 contagem_servicos = 1
-lista_servicos = []
-lista_agendamentos = []
+if os.path.exists('Servicos.json'):
+    with open('Servicos.json', 'r', encoding='utf-8') as arq:
+        lista_servicos = json.load(arq)
+else:
+    lista_servicos = []
+
+if os.path.exists('Agendamento.json'):
+    with open('Agendamento.json', 'r', encoding='utf-8') as arq:
+        lista_agendamentos = json.load(arq)
+else:
+    lista_agendamentos = []
+
 
 class Servicos():
     def __init__(self, id, tipo_servico, descricao, custo, duracao):

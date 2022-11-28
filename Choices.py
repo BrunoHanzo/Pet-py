@@ -38,6 +38,9 @@ class Choices():
                 opcao_clientes = 1
             else:
                 opcao_clientes = int(input())
+                with open('Clientes.json', 'r', encoding='utf-8') as arq:
+                    lengh_clientes = json.load(arq)
+                    contagem_clientes = len(lengh_clientes) + 1
 
             if opcao_clientes == 1:
                     while True:
@@ -80,6 +83,9 @@ class Choices():
                 opcao_servicos = 1
             else:
                 opcao_servicos = int(input())
+                with open('Clientes.json', 'r', encoding='utf-8') as arq:
+                    lengh_servicos = json.load(arq)
+                    contagem_servicos = len(lengh_servicos) + 1
 
             if opcao_servicos == 1:
                     while True:
@@ -135,6 +141,9 @@ class Choices():
                     opcao_estoque = 1
                 else:
                     opcao_estoque = int(input())
+                    with open('Clientes.json', 'r', encoding='utf-8') as arq:
+                        lengh_produtos = json.load(arq)
+                        contagem_produtos = len(lengh_produtos) + 1
 
                 if opcao_estoque == 1:
                     while True:
