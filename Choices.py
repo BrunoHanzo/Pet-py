@@ -83,7 +83,7 @@ class Choices():
                 opcao_servicos = 1
             else:
                 opcao_servicos = int(input())
-                with open('Clientes.json', 'r', encoding='utf-8') as arq:
+                with open('Servicos.json', 'r', encoding='utf-8') as arq:
                     lengh_servicos = json.load(arq)
                     contagem_servicos = len(lengh_servicos) + 1
 
