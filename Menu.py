@@ -75,6 +75,17 @@ class Menu():
                 print(f'|       {dado["Produto"]:<26}{dado["Quantidade"]:<16}|')
         print('|_________________________________________________|')
 
+    def MenuCaixaVazio(valor_caixa):
+        print(' _______________________________________________________')
+        print('|                       CAIXA                           |')
+        print('|_______________________________________________________|')
+        print('|         Descrição:          Fluxo de Caixa:           |')
+        print('|        Valor Inicial           R$100.00               |')
+        print('|_______________________________________________________|')
+        print('|                   Valor em caixa:                     |')
+        print(f'|                      R${valor_caixa:.2f}                         |')
+        print('|_______________________________________________________|')
+
     def MenuCaixa(valor_caixa):
         print(' _______________________________________________________')
         print('|                       CAIXA                           |')
@@ -84,8 +95,12 @@ class Menu():
         with open('Servicos.json', 'r', encoding='utf-8') as arq:
             dados = json.load(arq)
             for dado in dados:
-                print(f'|{dado["Descricao"]:>16}                R${dado["Custo"]:.2f}                 |')
+                print(f'|{dado["Descricao"]:>16}                R${dado["Custo"]:.2f}                |')
         print('|_______________________________________________________|')
         print('|                   Valor em caixa:                     |')
-        print(f'|                      R${valor_caixa:.2f}                         |')
+        with open('Servicos.json', 'r', encoding='utf-8') as arq:
+            dados = json.load(arq)
+            for dado in dados:
+                totdado = dado["Custo"]                 
+        print(f'|                      R${totdado + valor_caixa:.2f}                         |')
         print('|_______________________________________________________|')

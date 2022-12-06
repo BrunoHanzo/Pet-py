@@ -178,8 +178,12 @@ class Choices():
 
             elif financeiro == 2:
                 valor_inicial = 100
-                Menu.MenuCaixa(valor_inicial)
-                input('Aperte a tecla ENTER para sair!')
+                if os.path.exists(arquivo_servico) == False:
+                    Menu.MenuCaixaVazio(valor_inicial)
+                    input('Aperte a tecla ENTER para sair!')
+                else:
+                    Menu.MenuCaixa(valor_inicial)
+                    input('Aperte a tecla ENTER para sair!')
             
             elif financeiro == 3:
                 break
